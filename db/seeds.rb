@@ -9,3 +9,8 @@
 
 Spree::Core::Engine.load_seed if defined?(Spree::Core)
 Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
+
+CardType.create(type: "message")
+CardType.create(type: "wood_panel")
+CardType.create(type: "paper_panel")
+CardType.create(type: "non")
