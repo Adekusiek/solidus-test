@@ -2,7 +2,7 @@
 = order_form.fields_for :line_items, line_item do |item_form|
   |  <tr class="
   = cycle('', 'alt')
-  |  line-item"> 
+  |  line-item">
   td.cart-item-image[data-hook="cart_item_image"]
     - if variant.images.length == 0
       = link_to image_tag(variant.product.display_image.attachment(:small)), variant.product
@@ -45,6 +45,3 @@
         h4
           | Message
         = m.text_field :message
-  #message_card
-    h4
-      |  {{msg_header_1}} 
