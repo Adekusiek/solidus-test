@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201153609) do
+ActiveRecord::Schema.define(version: 20180201152404) do
 
   create_table "card_types", force: :cascade do |t|
     t.string   "category"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180201153609) do
 
   create_table "message_cards", force: :cascade do |t|
     t.text     "message"
+    t.integer  "line_item_id"
     t.integer  "card_type_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -239,7 +240,6 @@ ActiveRecord::Schema.define(version: 20180201153609) do
     t.decimal  "promo_total",          precision: 10, scale: 2, default: 0.0
     t.decimal  "included_tax_total",   precision: 10, scale: 2, default: 0.0, null: false
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2, default: 0.0
-    t.integer  "message_card_id"
   end
 
   add_index "spree_line_items", ["order_id"], name: "index_spree_line_items_on_order_id"

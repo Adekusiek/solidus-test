@@ -17,3 +17,5 @@
 /tmp
 
 /vendor
+.byebug_history
+/app/views/spree/orders/*.erb
