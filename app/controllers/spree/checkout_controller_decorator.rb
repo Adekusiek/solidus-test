@@ -1,3 +1,6 @@
+require 'dotenv'
+Dotenv.load
+
 Spree::CheckoutController.class_eval do
 
   after_action :slack_notification, only: :update
@@ -5,9 +8,13 @@ Spree::CheckoutController.class_eval do
   private
   def slack_notification
     if @order.completed?
+#      byebug
+      puts ENV['SLACK_POST_URL']
+      notifier = Slack::Notifier.new ENV['SLACK_POST_URL'],
+                                channel: "#general",
+                                username: "noti-bot"
       byebug
-      notifier = Slack::Notifier.new(ENV["SLACK_POST_URL"]) #事前準備で取得したWebhook URL
-      notifier.ping('新しい注文が来ました')
+      notifier.delay.ping('新しい注文が来ました')
     end
   end
 end

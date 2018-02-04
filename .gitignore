@@ -20,3 +20,4 @@
 .byebug_history
 /app/views/spree/orders/*.erb
 /app/views/spree/admin/orders/*.erb
+.env
