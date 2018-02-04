@@ -9,3 +9,8 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+# Due to error message from Solidus
+Rails.application.config.assets.precompile += %w( icons/delete.png )
+Rails.application.config.assets.precompile += %w( credit_cards/credit_card.gif )
+Rails.application.config.assets.precompile += %w( noimage/mini.png )
