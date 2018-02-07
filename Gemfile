@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 ruby '2.2.3'
+
+gem 'bundler', '>= 1.8.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
@@ -38,6 +40,10 @@ gem 'slack-notifier'
 gem 'dotenv-rails'
 gem 'delayed_job'
 gem "delayed_job_active_record"
+
+# vuejs
+gem 'rails-assets-vue', '1.0.27', source: 'https://rails-assets.org'
+gem 'gon', '4.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
